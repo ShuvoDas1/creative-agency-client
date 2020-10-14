@@ -1,5 +1,5 @@
 import React from 'react';
-import Carousel from '../Carousel/Carousel';
+import CarouselItem from '../CarouselItem/CarouselItem';
 import Header from '../Header/Header';
 import Services from '../Services/Services';
 
@@ -8,7 +8,7 @@ const Home = () => {
         <div>
             <Header></Header>
             <Services></Services>
-            <Carousel></Carousel>
+            <CarouselItem></CarouselItem>
         </div>
     );
 };
