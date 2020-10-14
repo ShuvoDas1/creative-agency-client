@@ -8,6 +8,9 @@ import {
 } from "react-router-dom";
 import Login from './components/Login/Login';
 import { useState } from 'react';
+import ServicesForm from './components/ServicesForm/ServicesForm/ServicesForm';
+import Order from './components/ServicesForm/Order/Order';
+
 
 export const UserContext = createContext();
 
@@ -15,7 +18,6 @@ function App() {
   const [loggedInUser,setLoggedInUser] = useState({})
   return (
     <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
-      Email: {loggedInUser.email}
       <Router>
         <Switch>
           <Route exact path='/'>
@@ -24,6 +26,10 @@ function App() {
           <Route path='/login'>
             <Login></Login>
           </Route>
+          <Route path='/services/form:id'>
+              <ServicesForm></ServicesForm>
+          </Route>
+          
         </Switch>
       </Router>
     </UserContext.Provider>
