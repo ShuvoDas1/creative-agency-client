@@ -26,7 +26,7 @@ function App() {
           <Route path='/login'>
             <Login></Login>
           </Route>
-          <Route path='/services/form:id'>
+          <Route path='/services/form'>
               <ServicesForm></ServicesForm>
           </Route>
           

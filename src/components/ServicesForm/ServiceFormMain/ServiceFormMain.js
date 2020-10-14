@@ -27,14 +27,14 @@ const ServiceFormMain = () => {
                 defaultSize={150}
             // resizerStyle={styles}
             >
-                <div style={{ width: '100px' }}>
+                <div style={{ width: '300px' }}>
                     <ul style={{ listStyle: 'none', }}>
 
                         <Link to='/services/form/order' style={{ textDecoration: 'none' }}>
                             <li> <FontAwesomeIcon className='mr-1' icon={faCartPlus}></FontAwesomeIcon>Order</li>
                         </Link>
                         <Link to='/services/form/serviceList' style={{ textDecoration: 'none' }}>
-                            <li> <FontAwesomeIcon className='mr-1' icon={faShoppingBag}></FontAwesomeIcon>Service List</li>
+                            <li className='my-3'> <FontAwesomeIcon className='mr-1' icon={faShoppingBag}></FontAwesomeIcon>Service List</li>
                         </Link>
                         <Link to='/services/form/review' style={{ textDecoration: 'none' }}>
                             <li> <FontAwesomeIcon className='mr-1' icon={faCommentAlt}></FontAwesomeIcon>Review</li>
