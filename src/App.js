@@ -10,16 +10,16 @@ import Login from './components/Login/Login';
 import { useState } from 'react';
 import DashBoard from './components/DashBoard/DashBoard/DashBoard';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Order from './components/DashBoard/Order/Order';
 
 
 export const UserContext = createContext();
 
 function App() {
   const [loggedInUser,setLoggedInUser] = useState({})
-  const [services,setServices] = useState([]);
 
   return (
-    <UserContext.Provider value={[loggedInUser,setLoggedInUser],[services,setServices]}>
+    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
       <h1>Email:{loggedInUser.email}</h1>
       <Router>
         <Switch>
@@ -31,7 +31,10 @@ function App() {
           </Route>
           <PrivateRoute path='/dashboard'>
               <DashBoard></DashBoard>
-          </PrivateRoute>  
+          </PrivateRoute>
+          {/* <PrivateRoute path='/dashboard/order/:serviceId'>
+            <Order></Order> 
+          </PrivateRoute>   */}
         </Switch>
       </Router>
     </UserContext.Provider>
