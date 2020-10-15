@@ -8,16 +8,19 @@ import {
 } from "react-router-dom";
 import Login from './components/Login/Login';
 import { useState } from 'react';
-import ServicesForm from './components/ServicesForm/ServicesForm/ServicesForm';
-import Order from './components/ServicesForm/Order/Order';
+import DashBoard from './components/DashBoard/DashBoard/DashBoard';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 
 export const UserContext = createContext();
 
 function App() {
   const [loggedInUser,setLoggedInUser] = useState({})
+  const [services,setServices] = useState([]);
+
   return (
-    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
+    <UserContext.Provider value={[loggedInUser,setLoggedInUser],[services,setServices]}>
+      <h1>Email:{loggedInUser.email}</h1>
       <Router>
         <Switch>
           <Route exact path='/'>
@@ -26,10 +29,9 @@ function App() {
           <Route path='/login'>
             <Login></Login>
           </Route>
-          <Route path='/services/form'>
-              <ServicesForm></ServicesForm>
-          </Route>
-          
+          <PrivateRoute path='/dashboard'>
+              <DashBoard></DashBoard>
+          </PrivateRoute>  
         </Switch>
       </Router>
     </UserContext.Provider>

@@ -1,17 +1,19 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus, faShoppingBag, faCommentAlt } from '@fortawesome/free-solid-svg-icons'
-import Order from '../Order/Order';
+
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
 } from "react-router-dom";
-import ServiceList from '../ServiceList/ServiceList';
 import SplitPane from 'react-split-pane';
+import Order from '../Order/Order';
+import ServiceList from '../ServiceList/ServiceList';
+import Review from '../Review/Review';
 
-const ServiceFormMain = () => {
+const DashBoardMain = () => {
     const styles = {
         background: '#000',
         width: '2px',
@@ -30,13 +32,13 @@ const ServiceFormMain = () => {
                 <div style={{ width: '300px' }}>
                     <ul style={{ listStyle: 'none', }}>
 
-                        <Link to='/services/form/order' style={{ textDecoration: 'none' }}>
+                        <Link to='/dashboard/order' style={{ textDecoration: 'none' }}>
                             <li> <FontAwesomeIcon className='mr-1' icon={faCartPlus}></FontAwesomeIcon>Order</li>
                         </Link>
-                        <Link to='/services/form/serviceList' style={{ textDecoration: 'none' }}>
+                        <Link to='/dashboard/servicelist' style={{ textDecoration: 'none' }}>
                             <li className='my-3'> <FontAwesomeIcon className='mr-1' icon={faShoppingBag}></FontAwesomeIcon>Service List</li>
                         </Link>
-                        <Link to='/services/form/review' style={{ textDecoration: 'none' }}>
+                        <Link to='/dashboard/review' style={{ textDecoration: 'none' }}>
                             <li> <FontAwesomeIcon className='mr-1' icon={faCommentAlt}></FontAwesomeIcon>Review</li>
                         </Link>
 
@@ -45,11 +47,14 @@ const ServiceFormMain = () => {
                 <div style={{ backgroundColor: '#E5E5E5' }}>
                     <Switch>
 
-                        <Route path='/services/form/order'>
+                        <Route path='/dashboard/order'>
                             <Order></Order>
                         </Route>
-                        <Route path='/services/form/serviceList'>
+                        <Route path='/dashboard/servicelist'>
                             <ServiceList></ServiceList>
+                        </Route>
+                        <Route path='/dashboard/review'>
+                            <Review></Review>
                         </Route>
 
                     </Switch>
@@ -59,4 +64,4 @@ const ServiceFormMain = () => {
     );
 };
 
-export default ServiceFormMain;
+export default DashBoardMain;
