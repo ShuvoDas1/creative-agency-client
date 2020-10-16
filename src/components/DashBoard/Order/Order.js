@@ -28,9 +28,6 @@ const Order = () => {
 
   const handleBlur = e => {
     const newOrder = { ...placedOrder }
-    if(e.target.value === undefined){
-      alert('place enter require data')
-    }
     newOrder[e.target.name] = e.target.value;
     setPlacedOrder(newOrder);
   }
@@ -65,6 +62,8 @@ const Order = () => {
       .catch(error => {
         console.error(error)
       })
+      // e.preventDefault();
+      // e.target.reset();
   };
   return (
     <section style={{ height: '100%' }}>
@@ -80,28 +79,28 @@ const Order = () => {
         <div className="col-md-8">
           <form style={{ width: '400px', padding: '30px' }} onSubmit={handleSubmit(onSubmit)}>
             <div className='form-group'>
-              <input name="name" ref={register} onBlur={handleBlur} className='form-control' placeholder='Your name/Company name' />
-              {errors.name && <span>This field is required</span>}
+              <input name="name" ref={register({ required: true })} onBlur={handleBlur} className='form-control' placeholder='Your name/Company name' />
+              {errors.name && <span style={{color:'red'}}>This field is required</span>}
             </div>
             <div className='form-group'>
               <input name="email" ref={register} defaultValue={loggedInUser.email} className='form-control' placeholder='Your Email' />
-              {errors.email && <span>This field is required</span>}
             </div>
             <div className='form-group'>
               <input name="serviceName" onBlur={handleBlur} ref={register} defaultValue={selectedService.name} className='form-control' />
             </div>
 
             <div className='form-group'>
-              <textarea name="productDetail" ref={register} onBlur={handleBlur} className='form-control' placeholder='Product Detail' />
-              {errors.productDetail && <span>This field is required</span>}
+              <textarea name="productDetail" ref={register({ required: true })} onBlur={handleBlur} className='form-control' placeholder='Product Detail' />
+              {errors.productDetail && <span style={{color:'red'}}>This field is required</span>}
             </div>
             <div className='form-group row'>
               <div className="col-md-6">
-                <input name="price" ref={register} onBlur={handleBlur} className='form-control' placeholder='price' />
-                {errors.name && <span>This field is required</span>}
+                <input name="price" ref={register({ required: true })} onBlur={handleBlur} className='form-control' placeholder='price' />
+                {errors.price && <span style={{color:'red'}}>This field is required</span>}
               </div>
               <div className="col-md-6">
-                <input type="file" onChange={handleFileChange} />
+                <input name='image' type="file" onChange={handleFileChange} />
+                {/* {errors.image && <span style={{color:'red'}}>This field is required</span>} */}
               </div>
             </div>
             <input type="submit" className='btn btn-dark' />

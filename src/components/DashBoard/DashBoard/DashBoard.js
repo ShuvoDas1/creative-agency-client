@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import DashBoardMain from '../DashBoardMain/DashBoardMain'
 import logo from'../../../images/logos/logo.png'
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
@@ -16,7 +15,9 @@ import Order from '../Order/Order';
 
 const DashBoard = () => {
     const [loggedInUser,setLoggedInUser] =  useContext(UserContext)
-    console.log(loggedInUser);
+    
+        
+    
     return (
         <section style={{height:'100%'}}>
         <div className='d-flex justify-content-between p-3' >

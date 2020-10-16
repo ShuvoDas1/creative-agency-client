@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
-import fakeServices from '../../fakeServices/fakeServices';
 import Service from '../Service/Service';
 
 const Services = () => {

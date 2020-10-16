@@ -13,16 +13,19 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Order from './components/DashBoard/Order/Order';
 import OrderStatus from './components/DashBoard/OrderStatus/OrderStatus';
 import Review from './components/DashBoard/Review/Review';
+import AddService from './components/DashBoard/AddService/AddService';
 
 
 export const UserContext = createContext();
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({})
+  const [loggedInUser, setLoggedInUser] = useState({
+    email: 'shuvo0381@gmail.com',
+    name:'shuvo Das'
+  })
 
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      <h1>Email:{loggedInUser.email}</h1>
       <Router>
         <Switch>
           <Route exact path='/'>
@@ -31,9 +34,9 @@ function App() {
           <Route path='/login'>
             <Login></Login>
           </Route>
-          <PrivateRoute path='/dashboard'>
+          {/* <PrivateRoute path='/dashboard'>
             <DashBoard></DashBoard>
-          </PrivateRoute>
+          </PrivateRoute> */}
           <PrivateRoute path='/order/:serviceId'>
             <Order></Order> 
           </PrivateRoute> 
@@ -42,7 +45,10 @@ function App() {
           </Route> 
           <Route path='/serviceList'>
             <OrderStatus></OrderStatus>
-          </Route> 
+          </Route>
+          <Route path='/addService'>
+            <AddService></AddService>
+          </Route>
         </Switch>
       </Router>
     </UserContext.Provider>

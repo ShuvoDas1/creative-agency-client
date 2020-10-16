@@ -27,7 +27,7 @@ const ServiceList = () => {
                 <div className="col-md-2">
                     <Sidebar></Sidebar>
                 </div>
-                <div className="col-md-8">
+                <div className="col-md-8" style={{backgroundColor:"#F4F7FC",height:'100%',padding:'30px'}}>
 
                     <div className="row">
                         {
