@@ -17,8 +17,8 @@ const Review = () => {
                 <Sidebar></Sidebar>   
             </div>
             <div className="col-md-8">
-                <h1>this is review</h1>
-            </div>     
+                <h1>this is Review</h1>
+            </div> 
         </div>     
     </section>
     );

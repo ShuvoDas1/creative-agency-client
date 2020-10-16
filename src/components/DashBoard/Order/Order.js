@@ -42,11 +42,11 @@ const Order = () => {
 
  
   const onSubmit = e => {
-    const formData = new FormData()
+    const formData = new FormData()                                                                     
     
     formData.append('file', file)
     formData.append('name', placedOrder.name)
-    formData.append('email', placedOrder.email)
+    formData.append('email', loggedInUser.email)
     formData.append('serviceName', selectedService.name)
     formData.append('productDetail', placedOrder.productDetail)
     formData.append('price', placedOrder.price)
@@ -84,7 +84,7 @@ const Order = () => {
               {errors.name && <span>This field is required</span>}
             </div>
             <div className='form-group'>
-              <input name="email" ref={register} onBlur={handleBlur} className='form-control' placeholder='Your Email' />
+              <input name="email" ref={register} defaultValue={loggedInUser.email} className='form-control' placeholder='Your Email' />
               {errors.email && <span>This field is required</span>}
             </div>
             <div className='form-group'>
@@ -95,10 +95,6 @@ const Order = () => {
               <textarea name="productDetail" ref={register} onBlur={handleBlur} className='form-control' placeholder='Product Detail' />
               {errors.productDetail && <span>This field is required</span>}
             </div>
-            {/* <div className='form-group'>
-              <te name="productDetail" ref={register} onBlur={handleBlur} className='form-control' placeholder='Product Detail' />
-              {errors.productDetail && <span>This field is required</span>}
-            </div> */}
             <div className='form-group row'>
               <div className="col-md-6">
                 <input name="price" ref={register} onBlur={handleBlur} className='form-control' placeholder='price' />

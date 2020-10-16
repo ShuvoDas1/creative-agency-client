@@ -6,7 +6,7 @@ import { UserContext } from '../../../App';
 import './Service.css'
 
 const Service = ({ service }) => {
-    console.log(service)
+
     return (
         <div className='col-md-3 col-10 m-1'>
             <Link to={'/order/'+service._id} style={{textDecoration:'none'}}>

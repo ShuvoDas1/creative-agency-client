@@ -11,7 +11,7 @@ import { useState } from 'react';
 import DashBoard from './components/DashBoard/DashBoard/DashBoard';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Order from './components/DashBoard/Order/Order';
-import ServiceList from './components/DashBoard/ServiceList/ServiceList';
+import OrderStatus from './components/DashBoard/OrderStatus/OrderStatus';
 import Review from './components/DashBoard/Review/Review';
 
 
@@ -37,12 +37,12 @@ function App() {
           <PrivateRoute path='/order/:serviceId'>
             <Order></Order> 
           </PrivateRoute> 
-          <PrivateRoute path='/review'>
+          <Route path='/review'>
             <Review></Review>
-          </PrivateRoute> 
-          <PrivateRoute path='/serviceList'>
-            <ServiceList></ServiceList>
-          </PrivateRoute> 
+          </Route> 
+          <Route path='/serviceList'>
+            <OrderStatus></OrderStatus>
+          </Route> 
         </Switch>
       </Router>
     </UserContext.Provider>

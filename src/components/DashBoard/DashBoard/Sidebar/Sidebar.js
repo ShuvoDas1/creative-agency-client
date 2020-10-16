@@ -11,7 +11,7 @@ const Sidebar = () => {
         <div>
                     <ul style={{ listStyle: 'none', }}>
 
-                        <Link to='/' style={{ textDecoration: 'none' }}>
+                        <Link to='/order' style={{ textDecoration: 'none' }}>
                             <li> <FontAwesomeIcon className='mr-1' icon={faCartPlus}></FontAwesomeIcon>Order</li>
                         </Link>
                         <Link to='/serviceList' style={{ textDecoration: 'none' }}>

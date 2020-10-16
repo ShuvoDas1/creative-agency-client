@@ -5,7 +5,7 @@ import { faCartPlus, faShoppingBag, faCommentAlt } from '@fortawesome/free-solid
 
 import SplitPane from 'react-split-pane';
 import Order from '../Order/Order';
-import ServiceList from '../ServiceList/ServiceList';
+import ServiceList from '../OrderStatus/OrderStatus';
 import Review from '../Review/Review';
 
 const DashBoardMain = () => {
