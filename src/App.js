@@ -11,15 +11,17 @@ import { useState } from 'react';
 import DashBoard from './components/DashBoard/DashBoard/DashBoard';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Order from './components/DashBoard/Order/Order';
+import ServiceList from './components/DashBoard/ServiceList/ServiceList';
+import Review from './components/DashBoard/Review/Review';
 
 
 export const UserContext = createContext();
 
 function App() {
-  const [loggedInUser,setLoggedInUser] = useState({})
+  const [loggedInUser, setLoggedInUser] = useState({})
 
   return (
-    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <h1>Email:{loggedInUser.email}</h1>
       <Router>
         <Switch>
@@ -30,11 +32,17 @@ function App() {
             <Login></Login>
           </Route>
           <PrivateRoute path='/dashboard'>
-              <DashBoard></DashBoard>
+            <DashBoard></DashBoard>
           </PrivateRoute>
-          {/* <PrivateRoute path='/dashboard/order/:serviceId'>
+          <PrivateRoute path='/order/:serviceId'>
             <Order></Order> 
-          </PrivateRoute>   */}
+          </PrivateRoute> 
+          <PrivateRoute path='/review'>
+            <Review></Review>
+          </PrivateRoute> 
+          <PrivateRoute path='/serviceList'>
+            <ServiceList></ServiceList>
+          </PrivateRoute> 
         </Switch>
       </Router>
     </UserContext.Provider>

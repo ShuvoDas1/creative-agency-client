@@ -9,7 +9,7 @@ const Service = ({ service }) => {
     console.log(service)
     return (
         <div className='col-md-3 col-10 m-1'>
-            <Link to={'/dashboard/'} style={{textDecoration:'none'}}>
+            <Link to={'/order/'+service._id} style={{textDecoration:'none'}}>
                 <div className="card text-center py-4">
                     <img src={service.img} className="card-img-top img-fluid w-25 m-auto " alt="..." />
                     <div className="card-body">
