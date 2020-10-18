@@ -6,7 +6,7 @@ import Sidebar from '../DashBoard/Sidebar/Sidebar';
 
 const Review = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
 
     const handleBlur = e => {
         if(e.target.value === undefined){
@@ -24,8 +24,6 @@ const Review = () => {
           .then(result =>{
               alert('Thanks for your review');
           })
-        //   e.preventDefault();
-        //   e.target.reset()
       }
 
     return (

@@ -42,8 +42,6 @@ const AddService = () => {
             .catch(error => {
                 console.error(error)
             })
-        // e.preventDefault();
-        // e.target.reset();
     };
 
     return (
@@ -70,7 +68,6 @@ const AddService = () => {
                         </div>
                         <div className='form-group'>
                             <input name='image' type="file" onChange={handleFileChange}/>
-                            {/* {errors.image && <span style={{color:'red'}}>This field is required</span>} */}
                         </div>
                         <input type="submit" className='btn btn-dark' />
                     </form>

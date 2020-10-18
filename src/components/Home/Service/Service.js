@@ -1,8 +1,5 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../../../App';
 import './Service.css'
 
 const Service = ({ service }) => {

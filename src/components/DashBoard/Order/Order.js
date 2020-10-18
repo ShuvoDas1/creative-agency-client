@@ -10,14 +10,14 @@ import logo from '../../../images/logos/logo.png'
 const Order = () => {
  
   const { serviceId } = useParams();
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
 
 
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
   const [placedOrder, setPlacedOrder] = useState({})
   const [file, setFile] = useState(null)
    const [selectedService,setSelectedService] = useState({})
-   
+
     useEffect(()=>{
         fetch('http://localhost:4000/services/'+serviceId)
         .then(res => res.json())
@@ -61,8 +61,7 @@ const Order = () => {
       .catch(error => {
         console.error(error)
       })
-      // e.preventDefault();
-      // e.target.reset();
+
   };
   return (
     <section style={{ height: '100%' }}>
@@ -99,7 +98,6 @@ const Order = () => {
               </div>
               <div className="col-md-6">
                 <input name='image' type="file" onChange={handleFileChange} />
-                {/* {errors.image && <span style={{color:'red'}}>This field is required</span>} */}
               </div>
             </div>
             <input type="submit" className='btn btn-dark' />

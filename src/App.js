@@ -26,10 +26,6 @@ function App() {
     name: 'shuvo Das'
   })
 
-  const [serviceInfo, setServiceInfo] = useState({
-    name: ''
-  })
- 
   return (
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
         <Router>

@@ -14,17 +14,17 @@ const Navbar = () => {
 
 	return (
 		
-		<nav class="navbar navbar-expand-lg">
-			<a class="navbar-brand" href="#">
+		<nav className="navbar navbar-expand-lg">
+			<a className="navbar-brand" href="#">
 				<img src={logo} className='img-fluid' style={{ width: "100px", height: "50px" }} />
 			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+			<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span className="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ml-auto">
+			<div className="collapse navbar-collapse" id="navbarNav">
+				<ul className="navbar-nav ml-auto">
 					<li className="nav-item">
-						<Link class="nav-link" to='/'>Home</Link>
+						<Link className="nav-link" to='/'>Home</Link>
 					</li>
 					<li className="nav-item">
 						<a className="nav-link" href="#ourPortfolio">Our Portfolio</a>
