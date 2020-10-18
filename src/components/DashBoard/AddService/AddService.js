@@ -27,7 +27,7 @@ const AddService = () => {
         const formData = new FormData()
 
         formData.append('file', file)
-        formData.append('title', serviceInfo.title)
+        formData.append('name', serviceInfo.name)
         formData.append('description', serviceInfo.description)
 
 

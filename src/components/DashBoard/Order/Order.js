@@ -16,9 +16,8 @@ const Order = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
   const [placedOrder, setPlacedOrder] = useState({})
   const [file, setFile] = useState(null)
-
-
-    const [selectedService,setSelectedService] = useState({})
+   const [selectedService,setSelectedService] = useState({})
+   
     useEffect(()=>{
         fetch('http://localhost:4000/services/'+serviceId)
         .then(res => res.json())

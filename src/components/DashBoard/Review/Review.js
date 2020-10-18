@@ -24,8 +24,8 @@ const Review = () => {
           .then(result =>{
               alert('Thanks for your review');
           })
-          e.preventDefault();
-          e.target.reset()
+        //   e.preventDefault();
+        //   e.target.reset()
       }
 
     return (
