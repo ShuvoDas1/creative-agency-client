@@ -41,7 +41,7 @@ const Login = () => {
             const signInUser = {name:displayName,email}
             setLoggedInUser(signInUser);
             history.replace(from);
-            // setUserToken();
+            setUserToken();
           })
           .catch(error => {
             console.log(error.message);

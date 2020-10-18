@@ -15,7 +15,7 @@ const Review = () => {
       }
 
       const onSubmit = (data,e) =>{
-          fetch('http://localhost:4000/addReview',{
+          fetch('https://secure-bastion-91408.herokuapp.com/addReview',{
               method: 'POST',
               headers:{'Content-Type':'application/json'},
               body:JSON.stringify(data)

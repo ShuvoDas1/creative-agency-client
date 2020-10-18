@@ -9,7 +9,7 @@ const ServiceList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [userServiceList, setUserServiceList] = useState([])
     useEffect(() => {
-        fetch('http://localhost:4000/serviceListByEmail?email='+loggedInUser.email)
+        fetch('https://secure-bastion-91408.herokuapp.com/serviceListByEmail?email='+loggedInUser.email)
             .then(res => res.json())
             .then(data => {
                 setUserServiceList(data);

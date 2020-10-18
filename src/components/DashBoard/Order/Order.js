@@ -8,7 +8,7 @@ import logo from '../../../images/logos/logo.png'
 
 
 const Order = () => {
- 
+
   const { serviceId } = useParams();
   const { register, handleSubmit, errors } = useForm();
 
@@ -16,13 +16,13 @@ const Order = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
   const [placedOrder, setPlacedOrder] = useState({})
   const [file, setFile] = useState(null)
-   const [selectedService,setSelectedService] = useState({})
+  const [selectedService, setSelectedService] = useState({})
 
-    useEffect(()=>{
-        fetch('http://localhost:4000/services/'+serviceId)
-        .then(res => res.json())
-        .then(data => setSelectedService(data[0]))
-    },[])
+  useEffect(() => {
+    fetch('https://secure-bastion-91408.herokuapp.com/services/' + serviceId)
+      .then(res => res.json())
+      .then(data => setSelectedService(data[0]))
+  }, [])
 
 
   const handleBlur = e => {
@@ -36,21 +36,21 @@ const Order = () => {
     setFile(newFile)
   }
 
- 
+
   const onSubmit = e => {
-    const formData = new FormData()                                                                     
-    
+    const formData = new FormData()
+
     formData.append('file', file)
     formData.append('name', placedOrder.name)
     formData.append('email', loggedInUser.email)
     formData.append('serviceName', selectedService.name)
     formData.append('productDetail', placedOrder.productDetail)
     formData.append('price', placedOrder.price)
-    formData.append('serviceDescription',selectedService.description)
-    formData.append('serviceImg',selectedService.img)
+    formData.append('serviceDescription', selectedService.description)
+    formData.append('serviceImg', selectedService.img)
 
 
-    fetch('http://localhost:4000/addAOrder', {
+    fetch('https://secure-bastion-91408.herokuapp.com/addAOrder', {
       method: 'POST',
       body: formData
     })
@@ -78,7 +78,7 @@ const Order = () => {
           <form style={{ width: '400px', padding: '30px' }} onSubmit={handleSubmit(onSubmit)}>
             <div className='form-group'>
               <input name="name" ref={register({ required: true })} onBlur={handleBlur} className='form-control' placeholder='Your name/Company name' />
-              {errors.name && <span style={{color:'red'}}>This field is required</span>}
+              {errors.name && <span style={{ color: 'red' }}>This field is required</span>}
             </div>
             <div className='form-group'>
               <input name="email" ref={register} defaultValue={loggedInUser.email} className='form-control' placeholder='Your Email' />
@@ -89,12 +89,12 @@ const Order = () => {
 
             <div className='form-group'>
               <textarea name="productDetail" ref={register({ required: true })} onBlur={handleBlur} className='form-control' placeholder='Product Detail' />
-              {errors.productDetail && <span style={{color:'red'}}>This field is required</span>}
+              {errors.productDetail && <span style={{ color: 'red' }}>This field is required</span>}
             </div>
             <div className='form-group row'>
               <div className="col-md-6">
                 <input name="price" ref={register({ required: true })} onBlur={handleBlur} className='form-control' placeholder='price' />
-                {errors.price && <span style={{color:'red'}}>This field is required</span>}
+                {errors.price && <span style={{ color: 'red' }}>This field is required</span>}
               </div>
               <div className="col-md-6">
                 <input name='image' type="file" onChange={handleFileChange} />

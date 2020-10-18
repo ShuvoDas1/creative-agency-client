@@ -9,7 +9,7 @@ const ClientsFeedback = () => {
     const [reviews,setReviews] =  useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:4000/getReview')
+        fetch('https://secure-bastion-91408.herokuapp.com/getReview')
         .then(res => res.json())
         .then(data => setReviews(data))
     },[])

@@ -31,7 +31,7 @@ const AddService = () => {
         formData.append('description', serviceInfo.description)
 
 
-        fetch('http://localhost:4000/addAService', {
+        fetch('https://secure-bastion-91408.herokuapp.com/addAService', {
             method: 'POST',
             body: formData
         })
@@ -58,8 +58,8 @@ const AddService = () => {
                 <div className="col-md-8">
                     <form style={{ width: '400px', padding: '30px' }} onSubmit={handleSubmit(onSubmit)}>
                         <div className='form-group'>
-                            <input name="title" onBlur={handleBlur} ref={register({ required: true })} className='form-control' placeholder='Title' />
-                            {errors.title && <span style={{ color: 'red' }}>This field is required</span>}
+                            <input name="name" onBlur={handleBlur} ref={register({ required: true })} className='form-control' placeholder='Title' />
+                            {errors.name && <span style={{ color: 'red' }}>This field is required</span>}
                         </div>
 
                         <div className='form-group'>

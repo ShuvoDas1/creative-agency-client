@@ -4,23 +4,12 @@ import Service from '../Service/Service';
 
 const Services = () => {
     
-    // const addToDatabase = () => {
-    //     console.log(fakeServices)
-    //     fetch('http://localhost:4000/addServices',{
-    //         method: 'POST',
-    //         headers: {"Content-Type":"application/json"},
-    //         body: JSON.stringify(fakeServices)
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         console.log(data);
-    //     })
-    // }
+
 
     const [services,setServices] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:4000/services')
+        fetch('https://secure-bastion-91408.herokuapp.com/services')
         .then(res => res.json())
         .then(data => setServices(data))
     },[])
