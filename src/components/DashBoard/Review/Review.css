@@ -1,0 +1,21 @@
+.review-main{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.review-main img{
+    width: 200px;
+}
+
+.review-details{
+    background-color: #F4F7FC;
+    width: 100%;
+    height: 750px;
+    padding: 25px;
+}
+
+.review-details form{
+    width: 750px;
+    padding: 50px;
+}

@@ -1,0 +1,19 @@
+.login{
+    width: 800px;
+    height: 100%;
+    padding: 30px;
+    box-shadow: 0px 5px 5px 5px lightgrey;
+    border-radius: 10px;
+    /* background: #B4B4B4; */
+}
+
+.login-btn{
+    width: 400px;
+    padding: 30px;
+    margin: 10px;
+}
+
+.login-btn:hover{
+    padding: 15px
+    
+}

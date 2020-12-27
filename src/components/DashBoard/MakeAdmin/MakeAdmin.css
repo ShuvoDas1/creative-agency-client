@@ -1,0 +1,21 @@
+.make-admin-main{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.make-admin-main img{
+   width: 200px
+}
+
+.make-admin-details{
+    background-color: #F4F7FC;
+    width: 100%;
+    height: 750px;
+}
+
+.make-admin-details form{
+    width: 750px;
+    padding: 50px;
+    padding-top: 80px;
+}

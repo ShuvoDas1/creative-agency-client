@@ -22,8 +22,8 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({
-    email: 'shuvo0381@gmail.com',
-    name: 'shuvo Das'
+    email: '',
+    name: ''
   })
 
   return (

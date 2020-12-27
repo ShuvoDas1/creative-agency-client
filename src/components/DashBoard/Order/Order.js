@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import Sidebar from '../DashBoard/Sidebar/Sidebar';
 import logo from '../../../images/logos/logo.png'
-
+import './Order.css'
 
 const Order = () => {
 
@@ -23,6 +23,7 @@ const Order = () => {
       .then(res => res.json())
       .then(data => setSelectedService(data[0]))
   }, [])
+
 
 
   const handleBlur = e => {
@@ -64,40 +65,40 @@ const Order = () => {
 
   };
   return (
-    <section style={{ height: '100%' }}>
+    <section className='order-main'>
       <div className='d-flex justify-content-between p-3' >
-        <img src={logo} className='img-fluid' style={{ width: "100px", height: "50px" }} alt="" />
-        <h5>Order</h5>
+        <Link to='/'><img src={logo}  className='img-fluid' alt="" /></Link>
+        <h5>ORDER</h5>
         <h5>{loggedInUser.name}</h5>
       </div>
       <div className='row'>
         <div className="col-md-2">
           <Sidebar></Sidebar>
         </div>
-        <div className="col-md-8">
-          <form style={{ width: '400px', padding: '30px' }} onSubmit={handleSubmit(onSubmit)}>
+        <div className="col-md-10 order-details">
+          <form  onSubmit={handleSubmit(onSubmit)}>
             <div className='form-group'>
-              <input name="name" ref={register({ required: true })} onBlur={handleBlur} className='form-control' placeholder='Your name/Company name' />
+              <input name="name" ref={register({ required: true })} onBlur={handleBlur} className='form-control p-4' placeholder='Your name/Company name' />
               {errors.name && <span style={{ color: 'red' }}>This field is required</span>}
             </div>
             <div className='form-group'>
-              <input name="email" ref={register} defaultValue={loggedInUser.email} className='form-control' placeholder='Your Email' />
+              <input name="email" ref={register} defaultValue={loggedInUser.email} className='form-control p-4' placeholder='Your Email' />
             </div>
             <div className='form-group'>
-              <input name="serviceName" onBlur={handleBlur} ref={register} defaultValue={selectedService.name} className='form-control' />
+              <input name="serviceName" onBlur={handleBlur} ref={register} defaultValue={selectedService.name} className='form-control p-4' />
             </div>
 
             <div className='form-group'>
-              <textarea name="productDetail" ref={register({ required: true })} onBlur={handleBlur} className='form-control' placeholder='Product Detail' />
+              <textarea name="productDetail" ref={register({ required: true })} onBlur={handleBlur} className='form-control p-4' placeholder='Product Detail' />
               {errors.productDetail && <span style={{ color: 'red' }}>This field is required</span>}
             </div>
             <div className='form-group row'>
               <div className="col-md-6">
-                <input name="price" ref={register({ required: true })} onBlur={handleBlur} className='form-control' placeholder='price' />
+                <input name="price" ref={register({ required: true })} onBlur={handleBlur} className='form-control p-4' placeholder='price' />
                 {errors.price && <span style={{ color: 'red' }}>This field is required</span>}
               </div>
               <div className="col-md-6">
-                <input name='image' type="file" onChange={handleFileChange} />
+                <input name='image' className='form-control' type="file" onChange={handleFileChange} />
               </div>
             </div>
             <input type="submit" className='btn btn-dark' />

@@ -4,6 +4,8 @@ import Sidebar from '../DashBoard/Sidebar/Sidebar';
 import logo from '../../../images/logos/logo.png'
 import { useEffect } from 'react';
 import OrderStatusCard from './OrderStatusCard';
+import './OrderStatus.css';
+import { Link } from 'react-router-dom';
 
 const ServiceList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
@@ -17,17 +19,17 @@ const ServiceList = () => {
     }, [])
    
     return (
-        <section style={{ height: '100%' }}>
+        <section className='service-list-main'>
             <div className='d-flex justify-content-between p-3' >
-                <img src={logo} className='img-fluid' style={{ width: "100px", height: "50px" }} alt="" />
-                <h5>Order</h5>
+                <Link to='/'><img src={logo}  className='img-fluid' alt="" /></Link>
+                <h5>SERVICE LIST</h5>
                 <h5>{loggedInUser.name}</h5>
             </div>
             <div className='row'>
                 <div className="col-md-2">
                     <Sidebar></Sidebar>
                 </div>
-                <div className="col-md-8" style={{backgroundColor:"#F4F7FC",height:'100%',padding:'30px'}}>
+                <div className="col-md-10 service-list-details">
 
                     <div className="row">
                         {

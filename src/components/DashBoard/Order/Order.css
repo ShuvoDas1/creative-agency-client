@@ -1,0 +1,21 @@
+.order-main{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+}
+
+.order-main img{
+   width: 200px
+}
+
+.order-details{
+    background-color: #F4F7FC;
+    width: 100%;
+    height: 750px;
+}
+
+.order-details form{
+    width: 750px;
+    padding: 50px;
+}

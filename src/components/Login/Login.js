@@ -7,7 +7,7 @@ import { UserContext } from '../../App';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebaseConfig';
-
+import './Login.css'
 
 
 
@@ -51,13 +51,13 @@ const Login = () => {
     return (
         <section>
             <div className='m-5  text-center'>
-                <img src={logo} className='img-fluid' style={{ width: "100px", height: "50px" }}/>
+                <Link to='/'><img src={logo} className='img-fluid' style={{ width: "250px" }}/></Link>
             </div>
-            <div className=' mt-2 m-auto p-5' style={{border:'1px solid lightGray', width:'400px',height:'300px'}}>
+            <div className=' mt-2 m-auto p-5 login'>
                 <div className='text-center py-5'>
-                    <h5 className='text-center'>Login With</h5>
-                    <button className='btn btn-light my-3' onClick={handleSignIn} ><img src={google} className='img-fluid mr-4' style={{ width: "30px", height: "30px" }} alt=""/>Continue with Google</button>
-                    <p><small>Don't have an account?  <Link to='/login'>Create an account</Link></small></p>
+                    <h3 className='text-center'>Login With</h3>
+                    <button className='btn login-btn btn-dark' onClick={handleSignIn} ><img src={google} className='img-fluid mr-4' style={{ width: "30px", height: "30px" }} alt=""/> Continue with Google </button>
+                    <h6><p>Don't have an account?  <Link onClick={handleSignIn}>Create an account</Link></p></h6>
                 </div>
             </div>
         </section>
