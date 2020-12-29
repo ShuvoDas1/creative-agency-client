@@ -15,6 +15,7 @@ import OrderStatus from './components/DashBoard/OrderStatus/OrderStatus';
 import Review from './components/DashBoard/Review/Review';
 import AddService from './components/DashBoard/AddService/AddService';
 import MakeAdmin from './components/DashBoard/MakeAdmin/MakeAdmin';
+import AdminServiceList from './components/DashBoard/AdminServiceList/AdminServiceList';
 
 
 export const UserContext = createContext();
@@ -22,8 +23,8 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({
-    email: '',
-    name: ''
+    email: 'shuvo03811@gmail.com',
+    name: 'shuvo das'
   })
 
   return (
@@ -45,10 +46,10 @@ function App() {
             <PrivateRoute path='/review'>
               <Review></Review>
             </PrivateRoute>
-            <PrivateRoute path='/dashboard/order'>
-              <DashBoard></DashBoard>
-            </PrivateRoute>
-            <PrivateRoute path='/serviceList'>
+            {/* <PrivateRoute path='/dashboard/order'>
+              <Order />
+            </PrivateRoute> */}
+            <PrivateRoute path='/user/orderstatus'>
               <OrderStatus></OrderStatus>
             </PrivateRoute>
             <PrivateRoute path='/addService'>
@@ -56,6 +57,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path='/makeAdmin'>
               <MakeAdmin></MakeAdmin>
+            </PrivateRoute>
+            <PrivateRoute path='/admin/serviceList'>
+              <AdminServiceList></AdminServiceList>
             </PrivateRoute>
           </Switch>
         </Router>

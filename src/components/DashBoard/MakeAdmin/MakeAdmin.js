@@ -5,6 +5,7 @@ import logo from '../../../images/logos/logo.png';
 import { useForm } from 'react-hook-form';
 import './MakeAdmin.css'
 import { Link } from 'react-router-dom';
+import AdminSidebar from '../DashBoard/Sidebar/AdminSidebar';
 
 const MakeAdmin = () => {
     const [loggedInUser, setLoggedInUser] =  useContext(UserContext)
@@ -33,7 +34,7 @@ const MakeAdmin = () => {
             </div>
             <div className='row'>
                 <div className="col-md-2">
-                    <Sidebar></Sidebar>
+                    <AdminSidebar></AdminSidebar>
                 </div>
                 <div className="col-md-10 make-admin-details">
                     <form onSubmit={handleSubmit(onSubmit)}>

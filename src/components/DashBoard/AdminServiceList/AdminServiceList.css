@@ -1,0 +1,22 @@
+.serviceList-main{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.serviceList-main img{
+   width: 200px
+}
+
+.serviceList-table{
+    background-color: #F4F7FC;
+    width: 100%;
+    height: 750px;
+    
+}
+
+.serviceList-table Table{
+    width: 100%;
+    margin: 20px;
+    
+}

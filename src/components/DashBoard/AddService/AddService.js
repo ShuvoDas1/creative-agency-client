@@ -6,6 +6,7 @@ import { UserContext } from '../../../App';
 import Sidebar from '../DashBoard/Sidebar/Sidebar';
 import logo from '../../../images/logos/logo.png';
 import './AddService.css';
+import AdminSidebar from '../DashBoard/Sidebar/AdminSidebar';
 
 const AddService = () => {
 
@@ -53,10 +54,10 @@ const AddService = () => {
                 <h5>ADD SERVICES</h5>
                 <h5>{loggedInUser.name}</h5>
             </div>
-            <div className="containre">
+            <div>
                 <div className='row'>
                     <div className="col-md-2">
-                        <Sidebar></Sidebar>
+                        <AdminSidebar></AdminSidebar>
                     </div>
                     <div className="col-md-10 add-service-details">
                         <form onSubmit={handleSubmit(onSubmit)}>

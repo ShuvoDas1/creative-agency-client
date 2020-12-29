@@ -8,14 +8,25 @@
 }
 
 .sidebar-main ul{
-    list-style: none;
-
+    /* list-style: none; */
+    
+   
+   
 }
 
 .sidebar-main  li{
     color: black;
-    font-size: 22px;
-    padding: 10px;
+    font-size: 22px;  
+    list-style: none;
+    text-decoration: none;
+    padding-left: 30px;
+    padding: 20px;
+    /* text-align: center; */
+    
+}
+
+.sidebar-main Link{
+    text-decoration: none;
 }
 
 .sidebar-main li:hover{
