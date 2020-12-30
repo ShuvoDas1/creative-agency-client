@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Table } from 'react-bootstrap';
+import React, { useContext, useEffect, useState } from 'react';
+import { Spinner, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import logo from '../../../images/logos/logo.png';
@@ -7,6 +7,17 @@ import AdminSidebar from '../DashBoard/Sidebar/AdminSidebar';
 import './AdminServiceList.css'
 const AdminServiceList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const [allOrders, setAllOrders] = useState([]);
+
+    useEffect(() => {
+        fetch('https://secure-bastion-91408.herokuapp.com/allOrders')
+            .then(res => res.json())
+            .then(data => setAllOrders(data))
+    }, [])
+
+    
+
     return (
         <section className='serviceList-main'>
             <div className='d-flex justify-content-between p-3'>
@@ -19,24 +30,49 @@ const AdminServiceList = () => {
                     <div className="col-md-2">
                         <AdminSidebar></AdminSidebar>
                     </div>
-                    <div className="col-md-10 serviceList-table" style={{width: '100%'}}>
-                        <Table striped bordered hover variant="dark">
+                    <div className="col-md-10 serviceList-table" style={{ width: '100%' }}>
+
+                        <Table striped bordered hover variant="light">
+
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
+                                    <th>NAME</th>
+                                    <th>EMAIL ID</th>
+                                    <th>SERVICE</th>
+                                    <th>SERVICE DETAILS</th>
+                                    <th>STATUS</th>
                                 </tr>
                             </thead>
+
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
+                                {
+                                    allOrders == 0 && <Spinner animation="border" role="status">
+                                        <span className="sr-only" style={{ marginLeft: 'auto' }} >Loading...</span>
+                                    </Spinner>
+                                }
+                                {
+                                    allOrders.map(order =>
+
+                                        <tr>
+
+                                            <td>{order.name}</td>
+                                            <td>{order.email}</td>
+                                            <td>{order.serviceName}</td>
+                                            <td>{order.serviceDescription}</td>
+                                            <td>
+                                                <select className="form-select  form-control" aria-label="Default select example">
+                                                    <option selected>Select Status</option>
+                                                    <option value="Pending">Pending</option>
+                                                    <option value="On Going">On Going</option>
+                                                    <option value="Done">Done</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+
+                                    )
+                                }
+
+                                {/* <tr>
                                     <td>2</td>
                                     <td>Jacob</td>
                                     <td>Thornton</td>
@@ -46,7 +82,7 @@ const AdminServiceList = () => {
                                     <td>3</td>
                                     <td colSpan="2">Larry the Bird</td>
                                     <td>@twitter</td>
-                                </tr>
+                                </tr> */}
                             </tbody>
                         </Table>
                     </div>

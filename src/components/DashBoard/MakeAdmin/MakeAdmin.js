@@ -13,7 +13,7 @@ const MakeAdmin = () => {
 
     const onSubmit = data => {
 
-        fetch('http://localhost:4000/makeAdmin',{
+        fetch('https://secure-bastion-91408.herokuapp.com/makeAdmin',{
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(data)

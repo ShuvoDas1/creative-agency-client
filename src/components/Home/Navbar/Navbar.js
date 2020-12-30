@@ -30,7 +30,7 @@ const Navbar = () => {
 						<Link className="nav-link" to='/dashboard'>Dashboard</Link>
 					</li>
 					<li className="nav-item">
-						<a className="nav-link" href="#ourPortfolio">Our Portfolio</a>
+						<a className="nav-link" href="https://shuvo-portfolio.netlify.app/" target='blank'>Our Portfolio</a>
 					</li>
 					<li className="nav-item">
 						<a className="nav-link" href="#ourTeam">Our Team </a>

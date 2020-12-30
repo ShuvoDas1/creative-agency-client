@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <section className=' m-5 p-5' style={{ backgroundColor: '#FBD062' }}>
+        <section className='p-5' style={{ backgroundColor: '#FBD062' }}>
             <div className='row'>
                 <div className="col-md-6 col-12">
                     <h1>Let us handle your <br /> project professionally.</h1>
@@ -26,7 +26,7 @@ const Footer = () => {
             </div>
             <br />
             <div className='mt-5'>
-                <p className='text-secondary text-center'>copyright Orange labs {new Date().getFullYear().toString()}</p>
+                <p className='text-dark text-center'>Copyright All Rigths Reserved {new Date().getFullYear().toString()}</p>
             </div>
         </section>
     );
