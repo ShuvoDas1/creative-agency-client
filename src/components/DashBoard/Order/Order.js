@@ -19,7 +19,7 @@ const Order = () => {
   const [file, setFile] = useState(null)
   const [selectedService, setSelectedService] = useState({})
   const [admin, setAdmin] = useState([]);
-
+  
   useEffect(() => {
     fetch('https://secure-bastion-91408.herokuapp.com/services/' + serviceId)
       .then(res => res.json())
@@ -27,14 +27,6 @@ const Order = () => {
   }, [])
 
   
-
-  useEffect(() => {
-    fetch('http://localhost:4000/admins')
-      .then(res => res.json())
-      .then(data => {
-        data.map(admin => setAdmin(admin))
-      })
-  }, [])
 
   const handleBlur = e => {
     const newOrder = { ...placedOrder }
@@ -46,7 +38,6 @@ const Order = () => {
     const newFile = e.target.files[0];
     setFile(newFile)
   }
-
 
   const onSubmit = e => {
     const formData = new FormData()
@@ -67,7 +58,7 @@ const Order = () => {
     })
       .then(response => response.json())
       .then(data => {
-        alert('Your order placed successfully')
+        alert('Your order placed successfully');
       })
       .catch(error => {
         console.error(error)
@@ -75,53 +66,48 @@ const Order = () => {
 
   };
   return (
-    <section className='order-main'>
-      {
-        loggedInUser.email == admin.email ? <AdminServiceList></AdminServiceList> :   
-        <div>
-        
-            <div className='d-flex justify-content-between p-3' >
-              <Link to='/'><img src={logo} className='img-fluid' alt="" /></Link>
-              <h5>ORDER</h5>
-              <h5>{loggedInUser.name}</h5>
-            </div>
-            <div className='row'>
-              <div className="col-md-2">
-                <Sidebar></Sidebar>
-              </div>
-              <div className="col-md-10 order-details">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                  <div className='form-group'>
-                    <input name="name" ref={register({ required: true })} onBlur={handleBlur} className='form-control p-4' placeholder='Your name/Company name' />
-                    {errors.name && <span style={{ color: 'red' }}>This field is required</span>}
-                  </div>
-                  <div className='form-group'>
-                    <input name="email" ref={register} defaultValue={loggedInUser.email} className='form-control p-4' placeholder='Your Email' />
-                  </div>
-                  <div className='form-group'>
-                    <input name="serviceName" onBlur={handleBlur} ref={register} defaultValue={selectedService.name} className='form-control p-4' />
-                  </div>
-
-                  <div className='form-group'>
-                    <textarea name="productDetail" ref={register({ required: true })} onBlur={handleBlur} className='form-control p-4' placeholder='Product Detail' />
-                    {errors.productDetail && <span style={{ color: 'red' }}>This field is required</span>}
-                  </div>
-                  <div className='form-group row'>
-                    <div className="col-md-6">
-                      <input name="price" ref={register({ required: true })} onBlur={handleBlur} className='form-control p-4' placeholder='price' />
-                      {errors.price && <span style={{ color: 'red' }}>This field is required</span>}
-                    </div>
-                    <div className="col-md-6">
-                      <input name='image' className='form-control' type="file" onChange={handleFileChange} />
-                    </div>
-                  </div>
-                  <input type="submit" className='btn btn-dark' />
-                </form>
-              </div>
-            </div>
-          </div>
-      }
-
+    <section className='order-main'>     
+         <div>  
+             <div className='d-flex justify-content-between p-3' >
+               <Link to='/'><img src={logo} className='img-fluid' alt="" /></Link>
+               <h5>ORDER</h5>
+               <h5>{loggedInUser.name}</h5>
+             </div>
+             <div className='row'>
+               {/* <div className="col-md-2">
+                 <Sidebar></Sidebar>
+               </div> */}
+               <div className="col-md-12 order-details">
+                 <form onSubmit={handleSubmit(onSubmit)} className='container'>
+                   <div className='form-group'>
+                     <input name="name" ref={register({ required: true })} onBlur={handleBlur} className='form-control p-4' placeholder='Your name/Company name' />
+                     {errors.name && <span style={{ color: 'red' }}>This field is required</span>}
+                   </div>
+                   <div className='form-group'>
+                     <input name="email" ref={register} onBlur={handleBlur}  defaultValue={loggedInUser.email} className='form-control p-4' placeholder='Your Email' />
+                   </div>
+                   <div className='form-group'>
+                     <input name="serviceName" onBlur={handleBlur} ref={register} defaultValue={selectedService.name} className='form-control p-4' />
+                   </div>
+ 
+                   <div className='form-group'>
+                     <textarea name="productDetail" ref={register({ required: true })} onBlur={handleBlur} className='form-control p-4' placeholder='Product Detail' />
+                     {errors.productDetail && <span style={{ color: 'red' }}>This field is required</span>}
+                   </div>
+                   <div className='form-group row'>
+                     <div className="col-md-6">
+                       <input name="price" ref={register({ required: true })} onBlur={handleBlur} className='form-control p-4' placeholder='price' />
+                       {errors.price && <span style={{ color: 'red' }}>This field is required</span>}
+                     </div>
+                     <div className="col-md-6">
+                       <input name='image'  className='form-control' type="file" onChange={handleFileChange} />
+                     </div>
+                   </div>
+                   <input type="submit" className='btn btn-dark' />
+                 </form>
+               </div>
+             </div>
+           </div>
     </section>
 
   );

@@ -10,11 +10,9 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import Sidebar from './Sidebar/Sidebar';
 import Order from '../Order/Order';
-import AddService from '../AddService/AddService';
-import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AdminServiceList from '../AdminServiceList/AdminServiceList';
+import ServiceList from '../OrderStatus/OrderStatus';
 
 const DashBoard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
@@ -32,7 +30,7 @@ const DashBoard = () => {
     return (
         <section>
             {
-                loggedInUser.email == admin.email ? <AdminServiceList></AdminServiceList> : <Order></Order>
+                loggedInUser.email == admin.email ? <AdminServiceList></AdminServiceList> : <ServiceList></ServiceList>
             }
         </section>
     );

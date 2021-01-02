@@ -23,8 +23,8 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({
-    email: 'shuvo03811@gmail.com',
-    name: 'shuvo das'
+    email: '',
+    name: ''
   })
 
   return (
@@ -38,7 +38,7 @@ function App() {
               <Login></Login>
             </Route>
             <PrivateRoute path='/order/:serviceId'>
-              <Order></Order>
+               <Order></Order>
             </PrivateRoute>
             <PrivateRoute path='/dashboard'>
               <DashBoard></DashBoard>
@@ -46,9 +46,6 @@ function App() {
             <PrivateRoute path='/review'>
               <Review></Review>
             </PrivateRoute>
-            {/* <PrivateRoute path='/dashboard/order'>
-              <Order />
-            </PrivateRoute> */}
             <PrivateRoute path='/user/orderstatus'>
               <OrderStatus></OrderStatus>
             </PrivateRoute>

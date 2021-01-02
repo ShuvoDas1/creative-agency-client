@@ -17,11 +17,11 @@ const ServiceList = () => {
                 setUserServiceList(data);
             })
     }, [])
-   
+
     return (
         <section className='service-list-main'>
             <div className='d-flex justify-content-between p-3' >
-                <Link to='/'><img src={logo}  className='img-fluid' alt="" /></Link>
+                <Link to='/'><img src={logo} className='img-fluid' alt="" /></Link>
                 <h5>SERVICE LIST</h5>
                 <h5>{loggedInUser.name}</h5>
             </div>
@@ -31,9 +31,13 @@ const ServiceList = () => {
                 </div>
                 <div className="col-md-10 service-list-details">
 
+                    {
+                        userServiceList.length === 0 && <h5 className='text-center m-auto'>Please wait...</h5>
+                    }
+
                     <div className="row">
                         {
-                            userServiceList.map(service => <OrderStatusCard key={service._id} service={service}></OrderStatusCard>)
+                             userServiceList.map(service => <OrderStatusCard key={service._id} service={service}></OrderStatusCard>)     
                         }
                     </div>
 
