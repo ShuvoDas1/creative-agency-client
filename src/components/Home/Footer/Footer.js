@@ -5,12 +5,15 @@ const Footer = () => {
 
     const handleFormSubmit = e => {
         e.preventDefault();
+        e.target.reset();
         emailjs.sendForm('service_deygipl', 'template_bh15yzb', e.target, 'user_mk4eGaKGs3zMADB7SHdMY')
             .then((result) => {
                 alert('Message sent successfully')
+                
             }, (error) => {
                 console.log(error.text);
             });
+            
     }
 
     return (

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import logo from '../../../images/logos/logo.png'
-import Sidebar from '../DashBoard/Sidebar/Sidebar';
+import Sidebar from '../Sidebar/Sidebar';
 import './Review.css'
 
 const Review = () => {
@@ -32,7 +32,7 @@ const Review = () => {
         formData.append('companyName', review.companyName);
         formData.append('description', review.description)
 
-        fetch('http://localhost:4000/addReview', {
+        fetch('https://secure-bastion-91408.herokuapp.com/addReview', {
             method: 'POST',
             body: formData
         })

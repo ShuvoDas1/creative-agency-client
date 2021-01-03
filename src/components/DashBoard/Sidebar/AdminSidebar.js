@@ -2,7 +2,10 @@ import { faPlus, faShoppingBasket, faSignOutAlt, faUserPlus } from '@fortawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../../../../App';
+import { UserContext } from '../../../App';
+
+
+
 import './Sidebar.css'
 
 const AdminSidebar = () => {
@@ -14,7 +17,7 @@ const AdminSidebar = () => {
     }
 
     return (
-        <div className='sidebar-main p-4'>
+        <div className='sidebar-main'>
             <ul>
                 <Link to='/admin/serviceList' style={{ textDecoration: "none" }}>
                     <li> <FontAwesomeIcon className='mr-1' icon={faShoppingBasket}></FontAwesomeIcon>Service List</li>

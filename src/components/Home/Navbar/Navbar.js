@@ -32,12 +32,12 @@ const Navbar = () => {
 					<li className="nav-item">
 						<a className="nav-link" href="https://shuvo-portfolio.netlify.app/" target='blank'>Our Portfolio</a>
 					</li>
-					<li className="nav-item">
+					{/* <li className="nav-item">
 						<a className="nav-link" href="#ourTeam">Our Team </a>
 					</li>
 					<li className="nav-item">
-						<a className="nav-link" href="#contact">Contact Us</a>
-					</li>
+						<a className="nav-link" href="Footer">Contact Us</a>
+					</li> */}
 					<button className='btn btn-dark' onClick={Login}>Login</button>
 				</ul>
 			</div>

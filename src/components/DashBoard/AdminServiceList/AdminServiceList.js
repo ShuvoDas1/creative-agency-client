@@ -3,7 +3,7 @@ import { Spinner, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import logo from '../../../images/logos/logo.png';
-import AdminSidebar from '../DashBoard/Sidebar/AdminSidebar';
+import AdminSidebar from '../Sidebar/AdminSidebar';
 import './AdminServiceList.css'
 const AdminServiceList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -16,7 +16,7 @@ const AdminServiceList = () => {
             .then(data => setAllOrders(data))
     }, [])
 
-    
+
 
     return (
         <section className='serviceList-main'>
@@ -46,9 +46,11 @@ const AdminServiceList = () => {
 
                             <tbody>
                                 {
-                                    allOrders == 0 && <Spinner animation="border" role="status">
-                                        <span className="sr-only" style={{ marginLeft: 'auto' }} >Loading...</span>
-                                    </Spinner>
+                                    allOrders == 0 && <div className="d-flex justify-content-center ">
+                                        <div className="spinner-border" role="status">
+                                            <span className="sr-only">Loading...</span>
+                                        </div>
+                                    </div>
                                 }
                                 {
                                     allOrders.map(order =>

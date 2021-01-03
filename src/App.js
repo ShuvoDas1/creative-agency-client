@@ -16,6 +16,7 @@ import Review from './components/DashBoard/Review/Review';
 import AddService from './components/DashBoard/AddService/AddService';
 import MakeAdmin from './components/DashBoard/MakeAdmin/MakeAdmin';
 import AdminServiceList from './components/DashBoard/AdminServiceList/AdminServiceList';
+import NotFound from './components/NotFound/NotFound';
 
 
 export const UserContext = createContext();
@@ -58,6 +59,9 @@ function App() {
             <PrivateRoute path='/admin/serviceList'>
               <AdminServiceList></AdminServiceList>
             </PrivateRoute>
+            <Route path='*'>
+              <NotFound />
+            </Route>
           </Switch>
         </Router>
       </UserContext.Provider>

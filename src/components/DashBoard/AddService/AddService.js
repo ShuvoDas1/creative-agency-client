@@ -3,10 +3,9 @@ import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
-import Sidebar from '../DashBoard/Sidebar/Sidebar';
 import logo from '../../../images/logos/logo.png';
 import './AddService.css';
-import AdminSidebar from '../DashBoard/Sidebar/AdminSidebar';
+import AdminSidebar from '../Sidebar/AdminSidebar';
 
 const AddService = () => {
 

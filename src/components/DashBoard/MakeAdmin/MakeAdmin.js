@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../../App';
-import Sidebar from '../DashBoard/Sidebar/Sidebar';
 import logo from '../../../images/logos/logo.png';
 import { useForm } from 'react-hook-form';
 import './MakeAdmin.css'
 import { Link } from 'react-router-dom';
-import AdminSidebar from '../DashBoard/Sidebar/AdminSidebar';
+import AdminSidebar from '../Sidebar/AdminSidebar';
 
 const MakeAdmin = () => {
     const [loggedInUser, setLoggedInUser] =  useContext(UserContext)

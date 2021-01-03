@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../App';
-import Sidebar from '../DashBoard/Sidebar/Sidebar';
+import Sidebar from '../Sidebar/Sidebar';
 import logo from '../../../images/logos/logo.png'
 import { useEffect } from 'react';
 import OrderStatusCard from './OrderStatusCard';

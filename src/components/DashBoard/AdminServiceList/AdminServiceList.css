@@ -11,12 +11,13 @@
 .serviceList-table{
     background-color: #F4F7FC;
     width: 100%;
-    height: 750px;
+    /* height: 100%; */
     
 }
 
 .serviceList-table Table{
     width: 100%;
     margin: 20px;
+    height: 100%
     
 }
